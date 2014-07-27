@@ -27,7 +27,6 @@ function! vimcomplete#complete()
   endif
   let rootdir = matchstr(context, '\([\n\s]\|^\)\/[^ ]*$')
   let rootdir = substitute(rootdir, '[^/]*$', '', '')
-  let g:rootdir = rootdir
   if isdirectory(rootdir)
     call feedkeys("\<Plug>(vim_complete_file)")
   elseif v:char =~ '[a-zA-Z._#$]' || len(v:char) == 0
